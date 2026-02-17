@@ -48,10 +48,10 @@ public:
     int getAspect() const { return aspect; }
     std::string getStringAspect() const {
         switch (aspect){
-            case RED: return REDBG + std::string(" ● ") + RESET;
-            case YELLOW: return YELLOWBG + std::string(" ● ") + RESET;
+            case RED: return REDBG + std::string(" ● ") + RESET + std::string(" ● ");
+            case YELLOW: return std::string(" ● ") + YELLOWBG + std::string(" ● ") + RESET;
             case DOUBLE_YELLOW: return YELLOWBG + std::string(" ●  ● ") + RESET;
-            case GREEN: return GREENBG + std::string(" ● ") + RESET;
+            case GREEN: return std::string(" ● ") + GREENBG + std::string(" ● ") + RESET;
             default: throw std::runtime_error("There was an error!");
         }
     }
